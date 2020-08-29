@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dhaula.dhaulaa.viewModel.VMHome" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Payment Options"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:paddingTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp" />
+
+        <RadioGroup
+            android:id="@+id/pay_rGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <RadioButton
+                android:id="@+id/pay_cod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment on Delivery"
+                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp" />
+
+            <RadioButton
+                android:id="@+id/pay_payU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay U Money (Coming Soon)"
+                android:enabled="false"
+                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_place_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/shape_button"
+            android:text="Place Order"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+    </LinearLayout>
+
+</layout>

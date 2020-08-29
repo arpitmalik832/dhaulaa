@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_margin="@dimen/_2sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/tab_background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:gravity="center"
+        android:minWidth="@dimen/_70sdp"
+        android:textColor="@color/colorMediumBlack"
+        android:padding="@dimen/_8sdp"
+        android:text="Tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>

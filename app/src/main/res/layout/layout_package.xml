@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image"
+                android:scaleType="fitXY"
+                android:src="@color/colorLightGray"
+                android:layout_width="@dimen/_96sdp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_pck_name"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_old_price"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Vegetables and Fruit"
+                app:layout_constraintStart_toEndOf="@+id/iv_image"
+                android:textColor="@color/colorMediumBlack"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_qty_name"
+                android:padding="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_old_price"
+                android:text="Qty. :"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintStart_toEndOf="@+id/iv_image"
+                android:textColor="@color/colorMediumBlack"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_qty"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/shape_et_rect"
+                android:gravity="center"
+                android:hint="0"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty_name"
+                android:textSize="@dimen/_9sdp"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintTop_toTopOf="@id/tv_qty_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kg"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintStart_toEndOf="@+id/et_qty"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:textColor="@color/colorDarkBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/et_qty"
+                app:layout_constraintTop_toTopOf="@+id/et_qty" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_old_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Price Rs. 240"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/tv_pck_name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:text="@string/rs_500"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pck_name"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price_off"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorMediumBlack"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price_off"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:layout_constraintTop_toTopOf="@+id/tv_price"
+                android:text="20 % off"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_buy"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:text="Add to basket"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/colorWhite"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:backgroundTint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/shapet_rounded_corners"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@+id/et_qty"
+                app:layout_constraintStart_toEndOf="@+id/iv_image"
+                app:layout_constraintEnd_toStartOf="@+id/btn_view"
+                android:layout_height="@dimen/_24sdp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_view"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="View"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/colorWhite"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:backgroundTint="@color/colorRedTb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/shapet_rounded_corners"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@+id/et_qty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_buy"
+                android:layout_height="@dimen/_24sdp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

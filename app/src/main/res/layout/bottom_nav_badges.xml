@@ -1,0 +1,17 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_badge"
+        android:layout_width="@dimen/_7sdp"
+        android:layout_height="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/shape_badget"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_7sdp" />
+
+</merge>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_orders"
+        android:icon="@drawable/ic_home"
+        android:title="My Orders" />
+
+    <item
+        android:id="@+id/navigation_article"
+        android:icon="@drawable/ic_news"
+        android:title="News and Articles" />
+
+    <item
+        android:id="@+id/navigation_terms"
+        android:icon="@drawable/ic_basket"
+        android:title="Terms and Condition" />
+
+    <item
+        android:id="@+id/navigation_become_member"
+        android:icon="@drawable/ic_news"
+        android:title="Become a Member" />
+
+    <item
+        android:id="@+id/navigation_login"
+        android:icon="@drawable/ic_news"
+        android:title="Login" />
+
+</menu>

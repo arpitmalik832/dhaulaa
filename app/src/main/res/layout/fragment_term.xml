@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dhaula.dhaulaa.viewModel.VMHome" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.FragmentTerm">
+
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_margin="@dimen/_8sdp"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/colorMediumBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms and Condition" />
+
+        <TextView
+            android:id="@+id/tv_term"
+            android:padding="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/long_text" />
+
+    </LinearLayout>
+</layout>

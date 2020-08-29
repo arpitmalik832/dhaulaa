@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dhaula.dhaulaa.viewModel.VMAuth" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".ui.fragment.FragmentVerify">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_design"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_280sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_splash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_customer_splash"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:text="Enter 6 digit OTP"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintBottom_toTopOf="@+id/et_otp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/shape_et"
+                android:hint="__ __ __ __ __ __"
+                android:inputType="number"
+                android:maxLength="6"
+                android:digits="0123456789"
+                android:text="@={viewModel.otp}"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_lbl_otp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:text="@{`OTP sent to `+ viewModel.phoneNumber}"
+                app:layout_constraintBottom_toTopOf="@+id/bt_login"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_resend_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:text="Resend OTP"
+                android:textColor="@color/colorDarkBlack"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/bt_login"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:text="@string/resend_otp"
+                android:textColor="@color/colorDarkBlack"
+                android:visibility="visible"
+                android:onClick="@{()->viewModel.resendOTP()}"
+                app:layout_constraintBottom_toTopOf="@+id/bt_login"
+                app:layout_constraintEnd_toStartOf="@+id/tv_resend_otp_in" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_resend_otp_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:text="02:44"
+                android:textColor="@color/colorRed"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/bt_login"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/shape_button"
+                android:text="@{viewModel.otpProgressText}"
+                android:onClick="@{()->viewModel.verifyOTP()}"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/pb_network"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:elevation="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@+id/bt_login"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_login"
+                app:layout_constraintStart_toStartOf="@+id/bt_login"
+                app:layout_constraintEnd_toEndOf="@+id/bt_login"
+                android:indeterminateTint="@color/colorWhite"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dhaula.dhaulaa.viewModel.VMHome" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_12sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_product"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Product Name"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: Rs 20/Kg"
+                android:textColor="@color/colorLightGreen"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:minHeight="@dimen/_90sdp"
+                android:text="@string/long_text"
+                android:textColor="@color/colorMediumBlack"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <View
+                android:id="@+id/line1"
+                style="@style/styleHorizontalView"
+                android:layout_width="match_parent"
+                android:background="@color/colorLightGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Check Availability"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Check Pincode"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_10sdp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_pin"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/shape_et_rect"
+                android:gravity="center"
+                android:hint="110092"
+                android:padding="@dimen/_6sdp"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lbl_check"
+                app:layout_constraintStart_toEndOf="@+id/tv_lbl_check"
+                app:layout_constraintTop_toTopOf="@id/tv_lbl_check" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_is_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Delivery Available"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/et_pin"
+                app:layout_constraintStart_toEndOf="@+id/et_pin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl" />
+
+            <View
+                android:id="@+id/line2"
+                style="@style/styleHorizontalView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@color/colorLightGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl_is_confirm" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:text="Add Quantity:"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_lbl_tp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="Total Price:"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl_qty" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_ttl_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 0"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorDarkBlack"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@+id/tv_lbl_tp" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_qty"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/shape_et_rect"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:textSize="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lbl_qty"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty"
+                app:layout_constraintTop_toTopOf="@id/tv_lbl_qty" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kg"
+                android:textColor="@color/colorDarkBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/et_qty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_qty" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_add_bsk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:background="@drawable/shape_button"
+                android:text="Add To Basket"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl_tp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
